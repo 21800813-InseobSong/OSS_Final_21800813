@@ -72,4 +72,4 @@ You can get the following informations from this bot.
 If you need more help, please send email to `21800813@handong.edu`
 
 ## Youtube link
-I will add it later
+https://youtu.be/ffKrKQUgAHA
