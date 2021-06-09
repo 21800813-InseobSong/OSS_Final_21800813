@@ -12,6 +12,8 @@ import schedule
 import coin
 
 symbol = ""
+
+#Start Message
 startMessage = 'Welcome to Useful Information Bot!\n' + \
         'This is a personal assistant telegram bot.\n' + \
         'Please press any of the following buttons you want to know:\n' + \
@@ -29,23 +31,29 @@ addMessage = "Enter your schedule"
 
 coinMessage = "Enter any of the following commands you want.\n" \
         
-
 coinNameMessage = "Choose the cryptocurrency's name.\n"
 
-teleToken = '1804852796:AAHbt8n0eAYyM7cuGX38ytc5W94x5TBU-lw'
-teleID = '1824568207'
+#Your own Telegram's token and ID
+teleToken = 'YOUR_OWN_TOKEN'
+teleID = 'YOUR_OWN_ID'
 
-airKey = 'A8Va%2FzSPCsfzf%2BDnvqP5h8Ork4rjNwCQqkLFeuAdaX%2FVXd1u3XKBg1SIYxUNlpC1vECangTGtRyyw8ki2LkllQ%3D%3D'
-weatherKey = 'A8Va%2FzSPCsfzf%2BDnvqP5h8Ork4rjNwCQqkLFeuAdaX%2FVXd1u3XKBg1SIYxUNlpC1vECangTGtRyyw8ki2LkllQ%3D%3D'
+#Your own encode key
+airKey = 'YOUR_OWN_KEY'
+weatherKey = 'YOUR_OWN_KEY'
 
+#Add key to weather class
 wMsg = weather.weather(weatherKey)
+#Add key to airpollution class
 aMsg = airpollution.airpollution(airKey)
+#Execute coin class
 upbit = coin.coin()
-coinList = upbit.getList()
 coinMsg = ''
+#Execute schedule class
 timetable = schedule.schedule()
+#Execute telepot with your token
 bot = telepot.Bot(teleToken)
 
+#Handle messages on telegram
 def handle(msg):
     input_chat = msg['text']
 
@@ -63,6 +71,7 @@ def handle(msg):
     else:
         timetable.setSchedule(input_chat)
 
+#Handle button's messgae
 def query_ans(msg):
     query_id = msg["id"]
     query_data = msg["data"]
@@ -115,6 +124,7 @@ def query_ans(msg):
 
 print('I am listening...')
 
+#Loop
 MessageLoop(bot, {'chat' : handle, "callback_query" : query_ans}).run_as_thread()
 
 while True:
