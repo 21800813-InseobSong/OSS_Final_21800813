@@ -32,7 +32,7 @@ class weather:
         string = ''
         maintime = self.maintime()
         maindate = self.maindate()
-        weatherString = "As of Pohang, " + maintime + " on " + maindate.strftime("%B %d, %Y") + "\n"
+        weatherString = "At Pohang, " + maintime + " on " + maindate.strftime("%B %d, %Y") + "\n"
         for i in childs:
             string = et.tostring(i).decode('utf-8')
             removeTag = re.sub('<.+?>', ' ', string, re.I|re.S)
