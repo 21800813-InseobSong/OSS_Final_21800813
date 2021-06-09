@@ -1,6 +1,5 @@
 import time
 import sys
-from pytz import timezone
 import datetime
 import telepot
 from telepot.loop import MessageLoop
@@ -14,7 +13,10 @@ import coin
 symbol = ""
 
 #Start Message
-startMessage = 'Welcome to Useful Information Bot!\n' + \
+startMessage = 'Please enter /help to show messages.'
+
+#Help Message
+helpMessage = 'Welcome to Useful Information Bot!\n' + \
         'This is a personal assistant telegram bot.\n' + \
         'Please press any of the following buttons you want to know:\n' + \
         ' - date : Date of today\n' + \
@@ -29,7 +31,7 @@ scheduleMsg = "Today's schedule!\n\n"
 
 addMessage = "Enter your schedule"
 
-coinMessage = "Enter any of the following commands you want.\n" \
+coinMsg = ''
         
 coinNameMessage = "Choose the cryptocurrency's name.\n"
 
@@ -47,7 +49,6 @@ wMsg = weather.weather(weatherKey)
 aMsg = airpollution.airpollution(airKey)
 #Execute coin class
 upbit = coin.coin()
-coinMsg = ''
 #Execute schedule class
 timetable = schedule.schedule()
 #Execute telepot with your token
@@ -67,7 +68,7 @@ def handle(msg):
         bt7 = BT(text = "Coin", callback_data = "7")
         bt8 = BT(text = "Exit", callback_data = "8")
         mu = MU(inline_keyboard = [[bt1, bt2], [bt3, bt4], [bt5, bt6], [bt7, bt8]])
-        bot.sendMessage(teleID, startMessage, reply_markup = mu)
+        bot.sendMessage(teleID, helpMessage, reply_markup = mu)
     else:
         timetable.setSchedule(input_chat)
 
@@ -123,6 +124,9 @@ def query_ans(msg):
         print("Send ada data")
 
 print('I am listening...')
+
+#Send start message
+bot.sendMessage(teleID, startMessage)
 
 #Loop
 MessageLoop(bot, {'chat' : handle, "callback_query" : query_ans}).run_as_thread()
