@@ -23,9 +23,9 @@ helpMessage = 'Welcome to Useful Information Bot!\n' + \
         ' - time : Current time\n' + \
         ' - weather : Current weather of Pohang\n' + \
         ' - airquality : Current air quality of Pohang\n' + \
-        ' - add schedule : Add your schedule\n' + \
-        ' - check schedule : Check your schedule\n' + \
-        ' - coin : Check current price and weather ascending field or not of Cryptocurrency'
+        ' - add schedule : Add your schedule\n - check schedule : Check your schedule\n' + \
+        ' - coin : Check current price and weather ascending field or not of Cryptocurrency' + \
+        ' - exit : Stop telebot'
 
 scheduleMsg = "Today's schedule!\n\n"
 
