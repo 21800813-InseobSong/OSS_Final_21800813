@@ -33,19 +33,20 @@ class weather:
         childs = root.getiterator("item")
         string = ''
         maintime = self.maintime()
-        weatherString = "As of Pohang, " + maintime + " on " + self.today.strftime("%B %d, %Y") + "\n"
+        maindate = self.maindate()
+        weatherString = "As of Pohang, " + maintime + " on " + maindate.strftime("%B %d, %Y") + "\n"
         for i in childs:
             string = et.tostring(i).decode('utf-8')
             removeTag = re.sub('<.+?>', ' ', string, re.I|re.S)
             splitString = removeTag.split()
             if "T3H" in string: 
-                if splitString[3] == self.base_date and splitString[4] == maintime in string:
+                if splitString[3] == maindate.strftime("%Y%m%d")  and splitString[4] == maintime in string:
                     weatherString = weatherString + "Current temperature : " + splitString[5] + " degrees\n"
             if "TMX" in string:
-                if splitString[3] == self.base_date in string:
+                if splitString[3] == maindate.strftime("%Y%m%d") in string:
                     weatherString = weatherString + "Highest temperature : " + splitString[5] + " degrees\n"
             if "POP" in string:
-                if splitString[3] == self.base_date and splitString[4] == maintime in string:
+                if splitString[3] == maindate.strftime("%Y%m%d") and splitString[4] == maintime in string:
                     weatherString = weatherString + "Current Rainfall probability : " +splitString[5] + "%\n"
         return weatherString
 
@@ -73,7 +74,7 @@ class weather:
 
     def maintime(self):
         time = self.today.strftime("%H%M")
-        if time < '0200':
+        if time < '0200' or time >= '2300':
             return '0300'
         elif time < '0500':
             return '0600'
@@ -87,6 +88,14 @@ class weather:
             return '1800'
         elif time < '2000':
             return '2100'
-        else:
-            self.base_date = str(int(self.base_date)+1)
+        elif time < '2300':
             return '0000'
+    
+    def maindate(self):
+        date = self.today
+        time = self.today.strftime("%H%M")
+        if time >= '2000':
+            date = date + datetime.timedelta(days=1)
+            return date
+        else:
+            return date
