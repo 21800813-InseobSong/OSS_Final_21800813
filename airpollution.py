@@ -22,7 +22,7 @@ class airpollution:
             string = et.tostring(i).decode('utf-8')
             removeTag = bs(string, "lxml").text
             splitString = removeTag.split()
-            airString = "As of Pohang, " + splitString[11] + ", " + splitString[10] + \
+            airString = "At Handong, " + splitString[11] + ", " + splitString[10] + \
                     "\nCurrent PM10 concentration: " + splitString[4] + "\nCurrent PM2.5 concentration: " + \
                     splitString[7]
             if splitString[14] == "1":
