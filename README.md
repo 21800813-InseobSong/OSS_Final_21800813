@@ -42,7 +42,7 @@ You can get the following informations from this bot.
 9. Enter `/start`, and insert your telegram id into `teleID = 'YOUR_OWN_ID'` instead of `YOUR_OWN_ID`
 10. Go to `https://www.data.go.kr/` and create new account.
 11. Log in `https://wwwldata.go.kr/` and go to `https://www.data.go.kr/data/15057682/openapi.do`
-12. Click the button `활용신청` button and choose all the check button.
+12. Click the `Request (활용신청)` button and choose all the check button.
 13. Copy your `Encoding (일반인증키)` and paste into `weatherKey = 'YOUR_OWN_KEY'` instead of `YOUR_OWN_KEY`
 14. Go to `https://www.data.go.kr/data/15073861/openapi.do` and click the button `활용신청` button and choose all the check button.
 15. Copy your `Encoding (일반인증키)` and paste into `airKey = 'YOUR_OWN_KEY'` instead of `YOUR_OWN_KEY`
