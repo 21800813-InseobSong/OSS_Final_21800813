@@ -5,7 +5,7 @@ This program is presonal telegram bot, which shows useful information.
 We can run this program with Raspberry Pi and Python, and you could use this bot anytime, anywhere while this program is running.
 It uses Open API, so you could see the data in text, instead of capturing site.
 
-## Then, what information does this project show?
+## Why is this project useful?
 At the first time you run the bot, you can see how to use this program.
 After that, the bot will wait your command.
 You can get the following informations from this bot.
@@ -17,7 +17,7 @@ You can get the following informations from this bot.
  - Check schedule : Check your schedule
  - Coin : Check current price and weather ascending field or not of Cryptocurrency
         
-## How to run this program?
+## How do I get started?
 1. Prepare your own Raspberry Pi and make it usable
 2. Clone this repository to your Raspberry Pi
 3. Install libraries.
@@ -68,7 +68,7 @@ You can get the following informations from this bot.
  - When you enter your schedule, it will add your schedule
  - Implemented ascending or descending field of specific cryptocurrency.
 
-## How to ask more about this project?
+## Where can I get more help, if I need it?
 If you need more help, please send email to `21800813@handong.edu`
 
 ## Youtube link
