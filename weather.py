@@ -3,8 +3,6 @@ import sys
 import datetime
 import requests
 import xml.etree.ElementTree as et
-import xmltodict
-from bs4 import BeautifulSoup
 import re
 
 class weather:
