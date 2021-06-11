@@ -57,6 +57,7 @@ You can get the following informations from this bot.
  - [How to use 'Public Data Portal' data in Python](https://blog.naver.com/PostView.nhn?blogId=pk3152&logNo=221367298814)
  - [Distinguish between rising and falling fields](https://wikidocs.net/21882)
  - [How to remove HTML Tag](http://zeany.net/46)
+ - [pyupbit](https://github.com/sharebook-kr/pyupbit)
 
 ## New work I added in this project
  - Implemented GUI to use easier.
